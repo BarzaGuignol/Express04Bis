@@ -42,10 +42,10 @@ const userSchema = Joi.object({
 });
 
 const validateUser = (req, res, next) => {
-  const { firstname, lastname, email } = req.body;
+  const { firstname, lastname, email, city, language } = req.body;
 
   const { error } = userSchema.validate(
-    { firstname, lastname, email },
+    { firstname, lastname, email, city, language },
     { abortEarly: false }
   );
 
